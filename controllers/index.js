@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const frontEndControllers = require("./frontendControllers");
+const frontEndControllers = require("./frontendController");
 router.use("/", frontEndControllers);
 
 const apiControllers = require("./api");

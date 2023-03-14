@@ -1,4 +1,3 @@
-console.log("signup link");
 const signUpBtn = document.querySelector("#signup");
 
 signUpBtn.addEventListener("click", async (e) => {
