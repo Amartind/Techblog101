@@ -3,6 +3,10 @@ const router = express.Router();
 const { User, Blog, Comment } = require("../../models");
 const bcrypt = require("bcrypt");
 
+router.get("/", async (req, res) => {
+  const userData = await User.findAll({ include: [Blog] });
+  res.json(userData);
+});
 
 router.post("/", async (req, res) => {
   const createUser = await User.create({
