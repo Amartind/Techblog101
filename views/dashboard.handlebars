@@ -1,0 +1,47 @@
+<div class="p-3 w-100 ">
+    <h1>{{username}}'s Account</h1>
+    <br>
+    <h2>Make a new post!</h2>
+    {{ newpost}}
+    <br>
+    <h3>Your Blogs:</h3>
+    <div class="d-flex flex-wrap p-1"  id="blogDiv">
+    {{#each Blogs}}
+    <div class="card text-bg-tertiary mb-3 w-50 rounded-0 d-flex" style="min-width: 25%;">
+    <div class="card-header">You Bloged:</div>
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{blog_text}}</p>
+    </div>
+        <p class="mx-3">
+        <a class="btn btn-outline-light btn-sm" data-bs-toggle="collapse" href="#{{id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Comments
+        </a>
+
+    <button type="button" class="btn btn-outline-danger btn-sm" id="deleteBtn">Delete Blog</button>
+    </p>
+
+    <div class="collapse m-3" id="{{id}}">
+ 
+    <form class="commentForm" id="{{id}}">
+        <div class="mb-3 d-flex w-75">
+            <label for="commentInput" class="form-label mx-3">Add a comment!</label>
+            <input class="form-control bg-secondary text-light-emphasis w-50" id="commentInput">
+            <button type="submit" class="btn btn-outline-primary btn-sm mx-3" id="commentSubmit">Submit</button>
+        </div>
+    </form>
+    {{#each Comments}}
+        <div class="card card-body rounded-0">
+            {{comment_text}}
+        </div>
+        {{/each}}
+    </div>
+        <p class="card-text m-3">Bloged on {{createdAt}}</p>
+        </div>
+    {{/each}}
+</div>
+
+
+</div>
+
+<script src="/js/dashboard.js"></script>
