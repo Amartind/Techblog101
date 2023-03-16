@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
   } else {
     const newBlog = await Blog.create({
       title: req.body.title,
-      post_text: req.body.blog_text,
+      blog_text: req.body.blog_text,
     });
     const user = await User.findByPk(req.session.UserId);
 
