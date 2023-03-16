@@ -3,14 +3,17 @@ const { User, Blog, Comment } = require("../models");
 
 const userData = [
     {
+      id:1,
       username: "user1",
       password: "password1",
     },
     {
+      id:2,
       username: "user2",
       password: "password2",
     },
     {
+      id:3,
       username: "user3",
       password: "password3",
     },
@@ -20,16 +23,19 @@ const seedUsers = () => User.bulkCreate(userData);
 
 const blogData = [
     {
+      id:1,
       title: "Blog 1",
       blog_text: "test text 1",
       UserId: 2,
     },
     {
+      id:2,
       title: "Blog 2",
       blog_text: "test text 2",
       UserId: 1,
     },
     {
+      id:3,
       title: "Blog 3",
       blog_text:
         "test text 3",
